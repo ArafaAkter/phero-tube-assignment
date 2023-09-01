@@ -17,15 +17,15 @@
   <header>
     <!-- nav ber -->
 
-    <nav class="flex justify-around items-center p-4">
+    <nav class="grid grid-cols-3 text-center p-7">
         <div>
             <img src="Logo.png" alt="">
         </div>
         <div>
-            <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Sort by view</button>
+            <button onclick="sortFunction()" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Sort by view</button>
         </div>
         <div>
-            <button class="btn btn-info">Blog</button>
+            <button onclick="myBlog()" class="btn btn-error">Blog</button>
         </div>
     </nav>
     <hr>
@@ -39,13 +39,15 @@
         </div>
     </section>
     <!-- card section -->
-    <section>
-        <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-5 ">
-        </div>
+    <section class="h-auto">
+        <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-5">
+         
+      </div>
     </section>
   </main>
-
+ 
     <script src="js/phero.js"></script>
+   
 </body>
 </html>
 
