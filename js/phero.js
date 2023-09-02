@@ -2,7 +2,6 @@ const handelCategory = async() =>{
     const response = await  fetch('https://openapi.programming-hero.com/api/videos/categories');
 
     const data = await response.json();
-    // console.log(data.data);
     const tabContainer = document.getElementById('tab-container');
     data.data.forEach((element) =>{
         const div = document.createElement("div");
@@ -11,19 +10,17 @@ const handelCategory = async() =>{
         `;
         tabContainer.appendChild(div);
     });
-    // console.log(data.data.length);
+   
   
 };
 
 const handleLoadPage = async(elementId) =>{
    const response =await fetch(` https://openapi.programming-hero.com/api/videos/category/${elementId}`) 
    const data = await response.json();
-  //  console.log(data.data.length);
    const cardContainer = document.getElementById('card-container');
    cardContainer.innerHTML ='';
 
     //hidden div
-    console.log(data.data);
     const hiddenDiv = document.getElementById('hidden-div');
     if(data.data.length == 0){
       hiddenDiv.classList.remove('hidden');
@@ -31,7 +28,7 @@ const handleLoadPage = async(elementId) =>{
       hiddenDiv.classList.add('hidden')
     }
 
-   data.data.forEach((content) =>{
+    data.data.forEach((content) =>{
     const div = document.createElement('div');
 
     //Time conversion
@@ -77,21 +74,6 @@ const handleLoadPage = async(elementId) =>{
    });
 
 };
-
-// sort by view
-
- const sortFunction =async ()=>{
-  // console.log('clicked');
-  const response = await  fetch('https://openapi.programming-hero.com/api/videos/category/1000');
-  const data = await response.json();
-  // console.log(data.data);
-  data.data.forEach((views) =>{
-    const viewsAmount = views.others.posted_date;
-    console.log(viewsAmount);
-
-  })
-  
- }
 
 // blog button
 function myBlog() {
